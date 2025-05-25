@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, lemonchiffon, beige);
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+    }
+
+    header, main, footer {
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      background: linear-gradient(to right, mediumseagreen, palegreen);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sliding-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .sliding-text, .sliding-icon {
+      display: inline-block;
+      white-space: nowrap;
+      animation: slide-left 10s linear infinite;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    header:hover .sliding-text,
+    header:hover .sliding-icon {
+      animation-play-state: paused;
+    }
+
+    @keyframes slide-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    h1, h2 {
+      color: seagreen;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .about-slider {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .about-box {
+      background-color: mintcream;
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      color: darkslategray;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .about-box:hover {
+      transform: scale(1.03);
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .project {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: honeydew;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: mintcream;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-image {
+      max-width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid lightgray;
+      margin-top: 5px;
+    }
+
+    button[type="submit"] {
+      background-color: seagreen;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      align-self: start;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: darkgreen;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: dimgray;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    footer a {
+      color: seagreen;
+      text-decoration: none;
+      margin: 0 5px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: darkgreen;
+    }
+
+    @media (max-width: 600px) {
+      .project-list {
+        grid-template-columns: 1fr;
+      }
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Me   <svg class="marquee-top__ico" viewBox="0 0 100 97" width="35"><path d="M50,97.5c-26.1915607,0-47.5-21.3084412-47.5-47.5S23.8084393,2.5,50,2.5S97.5,23.8084393,97.5,50S76.1915588,97.5,50,97.5z   M50,7.0238094C26.3030148,7.0238094,7.0238104,26.3030128,7.0238104,50S26.3030148,92.9761887,50,92.9761887  S92.9761887,73.6969833,92.9761887,50S73.6969833,7.0238094,50,7.0238094z"/><g><ellipse cx="35.2381935" cy="34.3672791" rx="4.7493854" ry="6.5021348"/></g><g><ellipse cx="64.7618027" cy="34.3672791" rx="4.7493854" ry="6.5021348"/></g><path d="M50,80.4100494c-14.6896172,0-26.6402111-11.4621811-26.6402111-25.5509796  c0-1.2492523,1.0131454-2.2619057,2.2619038-2.2619057c1.2487602,0,2.2619057,1.0126534,2.2619057,2.2619057  c0,11.594223,9.9213562,21.0271759,22.1164017,21.0271759s22.1164017-9.4329529,22.1164017-21.0271759  c0-1.2492523,1.0131454-2.2619057,2.2619019-2.2619057c1.248764,0,2.2619095,1.0126534,2.2619095,2.2619057  C76.640213,68.9478683,64.689621,80.4100494,50,80.4100494z"/></svg>
+    </h1>
+    <div class="sliding-container">
+      <p class="sliding-text">This is a simple portfolio page that introduces me and my work.</p>
+      </div>
+    <div class="about-slider" id="aboutSlider">
+      <div class="about-box">
+        <strong>Background:</strong>
+        <p>I have a background in Computer Science and have been working as a freelance web developer for over 6 months.</p>
+      </div>
+      <div class="about-box">
+        <strong>Interests:</strong>
+        <p>UI/UX, Event-driven programming, and Continuous Learning.</p>
+      </div>
+      <div class="about-box">
+        <strong>Skills:</strong>
+        <p>HTML, CSS, JavaScript, Git</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-label="Projects">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <article class="project">
+          <h3>Student Result Management System</h3>
+          <p>A system for managing student data, grades, and generating performance reports.</p>
+        </article>
+        <article class="project">
+          <h3>Event Management Platform</h3>
+          <p>A web application to handle event registration, scheduling, and communication.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Contact Form">
+      <h2>Contact Me</h2>
+      <div class="contact-container">
+        <form onsubmit="return validateForm()" aria-label="Contact Form">
+          <label for="name">Name:
+            <input type="text" id="name" name="name" required>
+          </label>
+          <label for="email">Email:
+            <input type="email" id="email" name="email" required>
+          </label>
+          <label for="phone">Phone:
+            <input type="tel" id="phone" name="phone">
+          </label>
+          <label for="subject">Subject:
+            <input type="text" id="subject" name="subject">
+          </label>
+          <label for="topic">Topic:
+            <select id="topic" name="topic">
+              <option value="general">General Inquiry</option>
+              <option value="project">Project Discussion</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </label>
+          <label for="message">Message:
+            <textarea id="message" name="message" required></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/000/166/810/small_2x/ContactMe_03_Preview.jpg" alt="Contact Illustration" class="contact-image">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved. | Designed with care and creativity.</p>
+    <p>Connect with me on:
+      <a href="https://www.linkedin.com/feed/?trk=onboarding-landing">LinkedIn</a>|
+      <a href="https://github.com/Anjali7-web/portfolio-website/tree/main">GitHub</a>|
+      <a href="https://x.com/Anjali_Pandeyyy?t=AXqBQi_k_urksPdl_1q0Tg&s=09">Twitter</a>
+    </p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name && !email && !message) {
+        alert('Please fill in all required fields.');
+        return false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      alert('Message sent!');
+      return true;
+    }
+  </script>
+</body>
+</html>
